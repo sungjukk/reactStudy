@@ -80,3 +80,5 @@ module.exports = {
 ```script
 npm start
 ```
+### 7. 참고 사이트
+[VELOPERT.LOG](https://velopert.com/814)
