@@ -1,0 +1,40 @@
+import React from 'react';
+import Header from './Header';
+import Content from './Content';
+import RandomNumber from './RandomNumber';
+// prop : 컴포넌트에서 사용 할 데이터 중 변동되지 않는 데이터를 다룰 때 사용
+class App extends React.Component {
+    constructor(props) {
+    	super(props);
+
+    	this.state = {
+    		value : Math.round(Math.random() * 100)
+		};
+
+    	this.updateValue = this.updateValue.bind(this);
+	}
+
+	updateValue(randomValue) {
+    	this.setState({
+			value : randomValue
+		})
+	}
+
+	render () {
+		return (
+			<div>
+				<Header title={this.props.headerTitle}/>
+				<Content title={this.props.contentTitle} body={this.props.contentBody}/>
+				<RandomNumber number={this.state.value} onUpdate={this.updateValue} />
+			</div>
+		);
+	}
+};
+
+App.defaultProps = {
+    headerTitle : 'defaultHeader',
+    contentTitle : "hi",
+    contentBody : "asdassd"
+}
+
+export default App;
