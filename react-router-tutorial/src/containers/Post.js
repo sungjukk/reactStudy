@@ -1,10 +1,10 @@
 import React from 'react';
 import BigText from '../components/BigText';
 
-const Post = () => {
+const Post = ({params}) => {
     return (
         <div>
-            <BigText>포스트</BigText>
+            <BigText>{params.id}</BigText>
         </div>
     );
 }
