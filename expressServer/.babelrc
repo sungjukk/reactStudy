@@ -1,0 +1,4 @@
+//npm install --save-dev babel-cli
+{
+  "presets" : ["es2015"]
+}
